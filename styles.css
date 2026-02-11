@@ -1,0 +1,164 @@
+/* HEADERS */
+h1, h2 { font-family: 'Cinzel Decorative', serif; margin: 0; }
+h1 { font-size: 56px; color: #000000; }
+.electric {
+    font-size: 90px;
+    background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+.electric:hover {
+    text-shadow: 0 0 12px #ff69b4, 0 0 24px #93E9BE, 0 0 36px #ff69b4;
+    animation: flicker 1s infinite alternate;
+}
+@keyframes flicker {
+    0% { text-shadow: 0 0 6px #93E9BE; }
+    50% { text-shadow: 0 0 18px #93E9BE; }
+    100% { text-shadow: 0 0 6px #93E9BE; }
+}
+
+/* BODY */
+body {
+    background: url("https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg") center/cover no-repeat;
+    margin: 0;
+    padding: 40px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 95%; 
+    background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148907303.jpg") center/cover no-repeat;
+    border-radius: 35px;
+    padding: 50px;       
+    min-height: 900px;  
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* SECTIONS */
+.section-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.section-nav a {
+    font-family: 'Alice', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.section-nav a:hover { color: #ff69b4; text-decoration: underline; }
+.section-nav a.active { color: #ff69b4; text-decoration: underline; }
+
+/* HERO */
+.hero { display: flex; align-items: flex-start; }
+
+/* PHOTO */
+.photo-frame {
+    position: relative;
+    width: 40%;
+    height: 850px;
+}
+.frame-layer {
+    position: absolute;
+    top: 5px; left: 5px; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+    border-radius: 35px; z-index: 0;
+}
+.photo-box {
+    position: absolute;
+    top: 0px; left: -10px;
+    width: calc(100% + 20px); height: calc(100% + 20px);
+    border-radius: 30px; overflow: hidden; z-index: 1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+.photo-box img {
+    position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 30px;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.main-photo { opacity: 1; z-index: 2; }
+.hover-photo { opacity: 0; z-index: 1; }
+.photo-box:hover .main-photo { opacity: 0; transform: scale(1.05); }
+.photo-box:hover .hover-photo { opacity: 1; }
+
+/* INFO */
+.letters { width: 60%; padding-left: 50px; padding-top: 20px; }
+.letters h1 { font-size: 60px; margin-bottom: 15px; }
+.electric { font-size: 100px; }
+
+/* Vertical section buttons */
+.buttons { 
+    margin-top: 70px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px;
+}
+.btn {
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 22px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.pink-btn {
+    background: linear-gradient(135deg, #ff85c1, #ffb6c1); 
+}
+.pink-btn:hover {
+    background: linear-gradient(135deg, #ff69b4, #ff85c1); 
+    transform: scale(1.1);
+    box-shadow: 0 0 18px #93E9BE, 0 0 30px #93E9BE, 0 0 45px #93E9BE; 
+    animation: lightning 0.8s infinite alternate;
+}
+@keyframes lightning {
+    0% { box-shadow: 0 0 18px #93E9BE, 0 0 30px #93E9BE, 0 0 45px #93E9BE; }
+    50% { box-shadow: 0 0 30px #93E9BE, 0 0 45px #93E9BE, 0 0 70px #93E9BE; }
+    100% { box-shadow: 0 0 18px #93E9BE, 0 0 30px #93E9BE, 0 0 45px #93E9BE; }
+}
+
+/*Cutiee Logos*/
+.social-icons {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+.social-btn {
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff85c1, #ffb6c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255,182,193,0.5);
+}
+.social-btn img {
+    width: 22px; /* icon size */
+    height: 22px;
+}
+.social-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 18px #93E9BE, 0 0 30px #93E9BE; 
+}
+
+/* minion1*/
+.minion1 {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+.minion1 img {
+    height:200px;
+}
